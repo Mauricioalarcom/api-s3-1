@@ -8,7 +8,7 @@ provider:
   memorySize: 256
   timeout: 20
   iam:
-    role: arn:aws:iam::520247722169:role/LabRole
+    role: arn:aws:iam::640145907648:role/LabRole
 
 functions:
   lista_buckets:
@@ -28,27 +28,27 @@ functions:
           method: post
           cors: true
           integration: lambda
-crearBucket:
+  crear_bucket:
     handler: crear_bucket.lambda_handler
     events:
       - http:
           path: /s3/crear-bucket
           method: post
           cors: true
-          integration: lambda 
-  crearDirectorio:
+          integration: lambda
+  crear_directorio:
     handler: crear_directorio.lambda_handler
     events:
       - http:
           path: /s3/crear-directorio
           method: post
           cors: true
-          integration: lambda 
-  uploadFile:
+          integration: lambda
+  subir_archivo:
     handler: subir_archivo.lambda_handler
     events:
       - http:
           path: /s3/subir-archivo
           method: post
           cors: true
-          integration: lambda 
+          integration: lambda
